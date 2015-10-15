@@ -2,11 +2,13 @@
 
 // sample consumer for logger
 var logger = require('./logger');
+var MongoWriter = require('./mongowriter');
 // this differs if browser or node.
-logger.i("test", "Hi there this is me");
-logger.w("test", "Hi there this is me");
-logger.e("test", "Hi there this is me");
-logger.t("test", "Hi there this is me");
+logger.plant(new MongoWriter());
+logger.i('test', 'Hi there this is me');
+logger.w('test', 'Hi there this is me');
+logger.e('test', 'Hi there this is me');
+logger.t('test', 'Hi there this is me');
 
 /*
 var level = require('./loglevel');

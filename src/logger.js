@@ -1,7 +1,8 @@
 'use strict';
 
 var loglevel = require('./loglevel');
-var logwriter = require('./logwriter').getInstance();
+var LogWriter = require('./logwriter');
+var logwriter = new LogWriter();
 
 var logger = {};
 
@@ -14,7 +15,17 @@ logger._writer_ = logwriter;
  */
 logger.i = function(tag, message) {
   this.__write__(loglevel.info, tag, message);
-}
+};
+
+/**
+ * Should use this to plant dynamic logwriter.
+ * @param  {LogWriter} writer to be used as transaction layer for log messages
+ */
+logger.plant = function(writer) {
+  // Note : do not remove plant give access to the caller to define logwriter.
+  // todo : in future the logger api will accept more than one logwriter.
+  this._writer = writer;
+};
 
 /**
  * log level warn
@@ -23,7 +34,7 @@ logger.i = function(tag, message) {
  */
 logger.w = function(tag, message) {
   this.__write__(loglevel.warn, tag, message);
-}
+};
 
 /**
  * log level error
@@ -32,7 +43,7 @@ logger.w = function(tag, message) {
  */
 logger.e = function(tag, message) {
   this.__write__(loglevel.error, tag, message);
-}
+};
 
 /**
  * log level trace
@@ -41,11 +52,11 @@ logger.e = function(tag, message) {
  */
 logger.t = function(tag, message) {
   this.__write__(loglevel.trace, tag, message);
-}
+};
 
 
 logger.__write__ = function(level, tag, message) {
   this._writer_.write(level, tag, message);
-}
+};
 
 module.exports = logger;
