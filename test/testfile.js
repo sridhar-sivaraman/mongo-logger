@@ -1,9 +1,10 @@
 'use strict';
 
-var logger = require('../src/mongo-logger');
+var logger = require('../src/logger');
 
 describe('mongo test', function() {
-	it('info test', function() {
-		logger.info('Test Msg');
-	});
+  it('info test', function() {
+		// dummy call
+    logger.i('tag', 'Test Msg');
+  });
 });
