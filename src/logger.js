@@ -1,12 +1,8 @@
 'use strict';
 
 var loglevel = require('./loglevel');
-var LogWriter = require('./logwriter');
-var logwriter = new LogWriter();
 
 var logger = {};
-
-logger._writer_ = logwriter;
 
 /**
  * log level info
@@ -24,7 +20,7 @@ logger.i = function(tag, message) {
 logger.plant = function(writer) {
   // Note : do not remove plant give access to the caller to define logwriter.
   // todo : in future the logger api will accept more than one logwriter.
-  this._writer = writer;
+  this._writer_ = writer;
 };
 
 /**
