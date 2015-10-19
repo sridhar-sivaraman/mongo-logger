@@ -24,12 +24,12 @@ util.inherits(MongoWriter, LogWriter);
  */
 MongoWriter.prototype.open = function() {
   // should be called before setting logger#plant
-}
+};
 
 MongoWriter.prototype.onPlant = function() {
   // check if mongo is connected or throw error.
   throw new Error('Mongo connection should be established before planting the mongo log writer');
-}
+};
 
 /**
 * Mongo write method
@@ -56,6 +56,6 @@ MongoWriter.prototype.write = function(level, tag, message) {
 
 MongoWriter.prototype.close = function() {
   // close the db connection here.
-}
+};
 
 module.exports = MongoWriter;
