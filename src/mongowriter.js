@@ -45,7 +45,7 @@ MongoWriter.prototype.write = function(level, tag, message) {
         }
         // Close connection
         db.close();
-        console.log('Connection to:', _mongourl , ' has been closed');
+        console.log('Connection to:', _mongourl, ' has been closed');
       });
     }
   });
