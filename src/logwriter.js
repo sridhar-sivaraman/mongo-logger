@@ -9,6 +9,9 @@ var LogWriter = function() {
 
 };
 
+/**
+ * Console write method
+ */
 LogWriter.prototype.write = function(level, tag, message) {
   switch (level) {
     case loglevel.info:
