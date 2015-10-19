@@ -20,6 +20,12 @@ logger.i = function(tag, message) {
 logger.plant = function(writer) {
   // Note : do not remove plant give access to the caller to define logwriter.
   // todo : in future the logger api will accept more than one logwriter.
+  try {
+    writer.onPlant();
+  } catch (err) {
+    // fail silently but warn the user.
+    return;
+  }
   this._writer_ = writer;
 };
 
@@ -52,7 +58,11 @@ logger.t = function(tag, message) {
 
 
 logger.__write__ = function(level, tag, message) {
-  this._writer_.write(level, tag, message);
+  try {
+    this._writer_.write(level, tag, message);
+  } catch (err) {
+    // fail silently incase of writer exception. should use common available console printing
+  }
 };
 
 module.exports = logger;
