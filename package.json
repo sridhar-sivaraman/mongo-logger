@@ -5,7 +5,7 @@
   "author": "Sridhar",
   "dependencies": {
     "loglevel": "^1.4.0",
-    "mongodb": "~2.0.46"
+    "mongoskin": "^2.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

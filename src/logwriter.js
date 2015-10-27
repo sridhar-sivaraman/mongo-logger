@@ -3,7 +3,7 @@
 var loglevel = require('./loglevel');
 
 /**
- * Just uses console log for logging.
+ * Just uses console for logging.
  */
 var LogWriter = function() {
 
