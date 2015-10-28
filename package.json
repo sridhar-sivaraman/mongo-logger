@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "author": "Sridhar",
   "dependencies": {
-    "loglevel": "^1.4.0",
     "mongoskin": "^2.0.3"
   },
   "devDependencies": {
