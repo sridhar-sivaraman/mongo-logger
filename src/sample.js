@@ -12,9 +12,9 @@ mongologger.open();
 // Plant to logger
 logger.plant(mongologger);
 // Insert the log messages
-logger.i('test', 'Hi there this is me');
-logger.w('test', 'Hi there this is me');
-logger.e('test', 'Hi there this is me');
-logger.t('test', 'Hi there this is me');
+logger.i('info-tag', 'This is a info message');
+logger.w('warn-tag', 'This is a warn message');
+logger.e('error-tag', 'This is a error message');
+logger.t('trace-tag', 'This is a trace message');
 // Close the mongo connection
 mongologger.close();
