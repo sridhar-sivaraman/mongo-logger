@@ -1,7 +1,7 @@
 # mongo-logger
 ## Mongo Logger Library:
 
-This is a logging library used for logging directly into a collection in mongodb.
+This is a logging library used for logging directly into a collection in mongoDB.
 
 ### How to use:
 
